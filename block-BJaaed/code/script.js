@@ -1,4 +1,5 @@
 
+let allBooks = {
     books: [
       {
         isbn: "9781593275846",
@@ -114,21 +115,30 @@
           "A JavaScript pattern and antipattern collection that covers function patterns, jQuery patterns, jQuery plugin patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns, DOM and browser patterns",
         website: "https://shichuan.github.io/javascript-patterns/",
       },
-    ];
+    ],
+  };
 
-    let ul = document.querySelectorAll('ul');
+/*    <div>
+        <img src="https://eloquentjavascript.net/img/cover.jpg" alt="eloquent-js">
+        <h2>Eloquent Javascript, Second edition</h2>
+        <p>Author: Marijn Haverbeke</p>
+        <button>Buy now</button>
+      </div> */
 
-    books.forEach((book) => {
-        let li = document.createElement('li');
+let main = document.querySelector('main');
+
+      allBooks.books.forEach((book) => {
+        let div = document.createElement('div');
         let img = document.createElement('img');
         img.src = book.image;
         let h2 = document.createElement('h2');
         h2.innerText = book.title;
         let p = document.createElement('p');
         p.innerText = book.description;
+        let button = document.createElement('button');
+        button.innerText = "Buy now"
 
-        li.append(img, h2, p);
-
-        ul.append(li);
-    })
-
+        main.append(div);
+        div.append(img, h2, p, button);
+      }
+      );
