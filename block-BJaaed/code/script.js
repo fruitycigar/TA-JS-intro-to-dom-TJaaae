@@ -118,27 +118,23 @@ let allBooks = {
     ],
   };
 
-/*    <div>
-        <img src="https://eloquentjavascript.net/img/cover.jpg" alt="eloquent-js">
-        <h2>Eloquent Javascript, Second edition</h2>
-        <p>Author: Marijn Haverbeke</p>
-        <button>Buy now</button>
-      </div> */
 
 let main = document.querySelector('main');
 
-      allBooks.books.forEach((book) => {
-        let div = document.createElement('div');
-        let img = document.createElement('img');
-        img.src = book.image;
-        let h2 = document.createElement('h2');
-        h2.innerText = book.title;
-        let p = document.createElement('p');
-        p.innerText = `Author: ${book.author}`;
-        let button = document.createElement('button');
-        button.innerText = "Buy now"
+allBooks.books.forEach((book) => {
+  
+  let div = document.createElement('div');
+  let img = document.createElement('img');
+  img.src = book.image;
+  let h2 = document.createElement('h2');
+  h2.innerText = book.title;
+  let p = document.createElement('p');
+  p.innerText = book.description;
+  let btn = document.createElement('button');
+  btn.innerText = 'Buy Now'
 
-        main.append(div);
-        div.append(img, h2, p, button);
-      }
-      );
+  div.append(img, h2, p, btn);
+
+  main.append(div);
+
+})
